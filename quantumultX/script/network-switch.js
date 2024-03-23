@@ -1,7 +1,6 @@
 /** 
 根据 Wi-Fi 或数据网络，将特定策略组（reject除外）切换成 direct 
-不影响 reject 去广告以及部分特殊需求
-js文件放置在Quantumultx/Scripts 目录下，并自行修改 Dlist/Dpolicy/Cpolicy
+自行修改 Dlist/Dpolicy/Cpolicy
 
 [task_local]
 event-network https://github.com/Cyberlayman/personal-profile/raw/main/quantumultX/script/network-switch.js, tag = Direct 策略切换, img-url = https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/SSID.png
