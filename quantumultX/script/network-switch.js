@@ -4,7 +4,7 @@
 js文件放置在Quantumultx/Scripts 目录下，并自行修改 Dlist/Dpolicy/Cpolicy
 
 [task_local]
-event-network network-switch.js, tag = Direct 策略切换, img-url = https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/SSID.png
+event-network https://github.com/Cyberlayman/personal-profile/raw/main/quantumultX/script/network-switch.js, tag = Direct 策略切换, img-url = https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/SSID.png
 //$notify("当前网络",$environment.ssid? $environment.ssid : String($environment.cellular.carrierName))
 // The $prefs is for persistent store: $prefs.valueForKey(key), $prefs.setValueForKey(value, key), $prefs.removeValueForKey(key), $prefs.removeAllValues().
 
