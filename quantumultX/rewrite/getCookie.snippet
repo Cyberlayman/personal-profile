@@ -9,6 +9,8 @@
 
 # 获取夸克网盘签到签到需要的各项参数
 ^https:\/\/drive-m.quark.cn\/1\/clouddrive\/capacity\/growth\/sign.+ url script-request-header https://gist.githubusercontent.com/Sliverkiss/2694a665b4e52d8788c18394201ff3eb/raw/quarkcloud.js
+# 阿里云获取cookie
+^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token url script-request-body https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js
 # B站Cookie(APP)
 ^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? url script-request-header https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js
 # B站Cookie(网页)
