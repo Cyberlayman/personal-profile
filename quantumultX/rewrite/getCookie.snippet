@@ -1,0 +1,28 @@
+# all get cookie rewrite
+# https://gist.githubusercontent.com/Sliverkiss/b564306f40741c8d549409fbe6c2aae9/raw/quark.conf, tag=夸克网盘签到获取token, update-interval=172800, opt-parser=false, enabled=true
+# https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Js_Remote_Cookie.conf, tag=NobyDa Cookie获取, update-interval=172800, opt-parser=false, enabled=false
+# https://gist.githubusercontent.com/Sliverkiss/b564306f40741c8d549409fbe6c2aae9/raw/mxbc.conf, tag=蜜雪冰城获取token, update-interval=172800, opt-parser=false, enabled=false
+# https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanbuy_checkin.qxrewrite, tag=慢慢买获取token, update-interval=172800, opt-parser=false, enabled=false
+# https://gist.githubusercontent.com/Sliverkiss/b564306f40741c8d549409fbe6c2aae9/raw/jhsh.conf, tag=建行生活签到获取token, update-interval=172800, opt-parser=false, enabled=false
+# https://gist.githubusercontent.com/Sliverkiss/b564306f40741c8d549409fbe6c2aae9/raw/smzdm.conf, tag=什么值得买获取token, update-interval=172800, opt-parser=false, enabled=false
+# https://gist.githubusercontent.com/Sliverkiss/b564306f40741c8d549409fbe6c2aae9/raw/qdds.conf, tag=起点获取ck, update-interval=172800, opt-parser=false, enabled=true
+
+# 获取夸克网盘签到签到需要的各项参数
+^https:\/\/drive-m.quark.cn\/1\/clouddrive\/capacity\/growth\/sign.+ url script-request-header https://gist.githubusercontent.com/Sliverkiss/2694a665b4e52d8788c18394201ff3eb/raw/quarkcloud.js
+# B站Cookie(APP)
+^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? url script-request-header https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js
+# B站Cookie(网页)
+^https?:\/\/m.bilibili.com/$ url script-request-header https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js
+# 获取蜜雪冰城需要的各项参数
+^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info url script-request-header https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js
+# 慢慢买获取cookie
+^https?:\/\/apph5\.manmanbuy\.com\/taolijin\/(login.aspx|logserver.aspx) url script-request-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanbuy_checkin.js
+# 获取建行生活签到需要的各项参数
+^https:\/\/yunbusiness\.ccb\.com\/(clp_coupon|clp_service)\/txCtrl\?txcode=(A3341A038|autoLogin) url script-request-body https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/jhsh_checkIn.js
+# 获取什么值得买任务需要的各项参数
+^https?:\/\/user-api\.smzdm\.com\/checkin$ url script-request-header https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js
+# 获取起点读书任务需要的各项参数 cookie每次都要使用（单独拿出来），taskId隔一段时间使用一次即可
+# https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch url script-request-body https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/qidian/qidian.cookie.js
+https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/mainPage url script-response-body https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/qidian/qidian.taskId.js
+
+hostname = yunbusiness.ccb.com, h5.if.qidian.com, user-api.smzdm.com, apph5.manmanbuy.com, drive-m.quark.cn, mxsa.mxbc.net, app.bilibili.com, m.bilibili.com
