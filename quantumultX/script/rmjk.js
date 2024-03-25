@@ -1400,14 +1400,11 @@ function parsehtmlrss(str, title, items, urls, covers) {
 
 function parsehtml(str, items, urls) {
   var text = JSON.stringify(str);
-  $.log("111"+text);
   //var name = /itemid\=\\\"\d\d\d\d\d\d\d\d\\\"\>.*?\<\/a\>\<\/td\>/g;
   var name = /itemid\=(?:[^\"\\<]|\\.)*\<\/a\>\<\/td\>/g;
   var link = /al\\\"\>\<a href\=\\\".*?\\\"/g;
   var preitem = text.match(name);
-  $.log("222"+preitem); 
   var preurl = text.match(link);
-  $.log("333*************333***************\\\n"+preurl);
   for (var i = 0; i < 20; i++) {
     var postitem = preitem[i].slice(20, -9);
     var posturl = preurl[i].slice(15, -2);
