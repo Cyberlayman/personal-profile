@@ -1406,6 +1406,7 @@ function parsehtml(str, items, urls) {
   var link = /al\\\"\>\<a href\=\\\".*?\\\"/g;
   var preitem = text.match(name);
   $.log("222"+preitem);
+  $.log("333"+link);
   var preurl = text.match(link);
   for (var i = 0; i < 20; i++) {
     var postitem = preitem[i].slice(20, -9);
