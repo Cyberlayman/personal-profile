@@ -3,8 +3,8 @@
 🥳脚本功能: 自动观看 起点读书 广告
 任务1: 福利中心 --> 每日视频福利 --> 手动看一个视频
 任务2: 福利中心 --> 限时彩蛋 --> 额外看三次小视频奖励 --> 手动看一个视频
-默认执行次数: 8次
-默认间隔时间: 20s 
+默认执行次数: 8次  改为9
+默认间隔时间: 20s   改为16
 🎯重写脚本:
 [rewrite local]
 https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch url script-request-body https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/qidian/qidian.cookie.js
@@ -57,7 +57,7 @@ if (!$.session_2) {
 }
 
 (async () => {
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < 9; i++) {
     $.log(`🟡任务1执行次数: ${i + 1}次`);
     await task($.session);
     await $.wait($.timeout * 1000);
