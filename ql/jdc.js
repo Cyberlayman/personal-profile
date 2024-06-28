@@ -1,4 +1,4 @@
-/ frida -U -F -l Frida_JD_COOKIE.js
+// frida -U -F -l Frida_JD_COOKIE.js
 // 或者使用jshook注入
 
 const BASE_URL = "http://192.168.6.11:5700"  //青龙地址 结尾不含/
