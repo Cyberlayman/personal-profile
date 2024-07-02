@@ -36,6 +36,10 @@ $.session_2 = $.getdata("qd_session_2");
 $.timeout = $persistentStore.read("sleep_time") ? $persistentStore.read("sleep_time") : 16;
 const task1_count = $persistentStore.read("task1_count") ? $persistentStore.read("task1_count") : 9;
 const task2_count = $persistentStore.read("task2_count") ? $persistentStore.read("task2_count") : 3;
+$.log("timeout:"+$.timeout);
+$.log("task1_count:"+task1_count);
+$.log("task2_count:"+task2_count);
+$done();
 
 if (!$.taskId) {
   $.log("⚠️任务1信息不全!");
