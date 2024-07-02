@@ -25,7 +25,7 @@ https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.jso
 */
 const $ = new Env("起点读书");
 
-let argument = "16,9,3";
+let argument = "16,,3";
 try {
   argument = $argument;
 } catch (e) {}
@@ -45,10 +45,6 @@ $.session = $.getdata("qd_session");
 $.session_2 = $.getdata("qd_session_2");
 //$.timeout = $.getdata("qd_timeout") ? $.getdata("qd_timeout") : 16;
 $.timeout = params[0] ? params[0] : 16;
-$.log("timeout:"+$.timeout);
-$.log("task1_count:"+task1_count);
-$.log("task2_count:"+task2_count);
-$done();
 
 if (!$.taskId) {
   $.log("⚠️任务1信息不全!");
