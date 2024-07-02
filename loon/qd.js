@@ -23,6 +23,8 @@ https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.jso
     "qd_timeout": 间隔时间, 默认20s, 可以在BoxJs中修改为0, 不怕黑号可以不间隔
     
 */
+const $ = new Env("起点读书");
+
 // 参数字符串
 const argument = $argument ? $argument : "16,9,3";
 
