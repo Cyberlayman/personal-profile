@@ -24,6 +24,9 @@ https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.jso
     
 */
 const $ = new Env("起点读书");
+#!input = sleep_time
+#!input = task1_count
+#!input = task2_count
 
 $.taskId = $.getdata("qd_taskId");
 $.taskId_2 = $.getdata("qd_taskId_2");
