@@ -24,15 +24,29 @@ https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.jso
     
 */
 const $ = new Env("起点读书");
+// 参数字符串
+const argument = $argument ? $argument : "sleep_time=16,task1_count=9,task2_count=3";
+// 解析参数字符串
+const params = argument.split(',');
+
+// 将参数存储在一个对象中
+const paramValues = {};
+params.forEach(param => {
+  const [key, value] = param.split('=');
+  paramValues[key] = value;
+});
+
+// 获取参数值，如果为空则使用默认值
+//const sleep_time = paramValues['sleep_time'] ? paramValues['sleep_time'] : 16;
+const task1_count = paramValues['task1_count'] ? paramValues['task1_count'] : 9;
+const task2_count = paramValues['task2_count'] ? paramValues['task2_count'] : 3;
 
 $.taskId = $.getdata("qd_taskId");
 $.taskId_2 = $.getdata("qd_taskId_2");
 $.session = $.getdata("qd_session");
 $.session_2 = $.getdata("qd_session_2");
 //$.timeout = $.getdata("qd_timeout") ? $.getdata("qd_timeout") : 16;
-$.timeout = $persistentStore.read("sleep_time") ? $persistentStore.read("sleep_time") : 16;
-const task1_count = $persistentStore.read("task1_count") ? $persistentStore.read("task1_count") : 9;
-const task2_count = $persistentStore.read("task2_count") ? $persistentStore.read("task2_count") : 3;
+$.timeout = paramValues['sleep_time'] ? paramValues['sleep_time'] : 16;
 $.log("timeout:"+$.timeout);
 $.log("task1_count:"+task1_count);
 $.log("task2_count:"+task2_count);
