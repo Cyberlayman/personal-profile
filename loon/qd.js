@@ -25,8 +25,10 @@ https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/mcdasheng.boxjs.jso
 */
 const $ = new Env("起点读书");
 
-// 参数字符串
-const argument = $argument ? $argument : "16,9,3";
+let argument = "16,9,3";
+try {
+  argument = $argument;
+} catch (e) {}
 
 // 解析参数字符串
 const params = argument.split(',');
