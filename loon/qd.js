@@ -32,10 +32,11 @@ try {
 
 // 解析参数字符串
 const params = argument.split(',');
+const count = new Date().getHours()==0 ? 9 : 8;
 
 // 获取参数值，如果为空则使用默认值
 //const sleep_time = params[0] ? params[0] : 16;
-const task1_count = params[1] ? params[1] : 9;
+const task1_count = params[1] ? params[1] : count;
 const task2_count = params[2] ? params[2] : 3;
 
 $.taskId = $.getdata("qd_taskId");
